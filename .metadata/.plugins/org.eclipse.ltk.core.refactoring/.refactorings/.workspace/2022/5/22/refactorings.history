@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Table_Per_Subclass&apos; to &apos;Demo-26-Table_Per_Subclass&apos;" description="Rename resource &apos;Table_Per_Subclass&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Table_Per_Subclass" name="Demo-26-Table_Per_Subclass" stamp="1653590458865" updateReferences="true"/>
+</session>

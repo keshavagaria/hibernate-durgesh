@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\visha\eclipse-workspace\hibernate-durgesh\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2389236961.index
+\NoteTaker\src\main\java
+C:\Users\visha\eclipse-workspace\hibernate\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2389236961.index
+\NoteTaker\src\main\resources

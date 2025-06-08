@@ -1,0 +1,61 @@
+package com.hcl.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	/*
+    	  Answer3 answer3_1=new Answer3();
+    	  answer3_1.setId(4000);
+    	  answer3_1.setAnswer("Spring is a Java Framework");
+    	  
+    	  Answer3 answer3_2=new Answer3();
+    	  answer3_2.setId(5000);
+    	  answer3_2.setAnswer("Spring provides loose coupling");
+    	  
+    	  Answer3 answer3_3=new Answer3();
+    	  answer3_3.setId(6000);
+    	  answer3_3.setAnswer("Spring has DI and IOC");
+    	  
+    	  List<Answer3> answers=new ArrayList<Answer3>();
+    	  answers.add(answer3_1);
+    	  answers.add(answer3_2);
+    	  answers.add(answer3_3);
+    	  
+    	  Question3 question3=new Question3();
+    	  question3.setQuestionId(302);
+    	  question3.setQuestion("What is SPring");
+    	  question3.setAnswers(answers);
+    	*/
+    
+    	  SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+          Session session=sessionFactory.openSession();
+//          Transaction tx=session.beginTransaction();        //no need of transaction in get or load
+       
+    	
+//          session.save(answer3_1);
+//          session.save(answer3_2);
+//          session.save(answer3_3);
+//          
+            Question3 q=  session.get(Question3.class, 301);
+            System.out.println(q.getQuestionId()+" "+q.getQuestion());
+          
+            System.out.println("hello");
+            
+          
+           // System.out.println(q.getAnswers().size());
+          
+          tx.commit();
+          session.close();
+ //         System.out.println(q.getQuestionId()+" "+q.getQuestion());
+          
+    }
+}

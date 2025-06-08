@@ -1,0 +1,78 @@
+package com.hcl.demo;
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class App {
+	
+	static  Logger logger = LogManager.getLogger(App.class);
+	
+	public static void main(String[] args) {
+
+//		SessionFactory sessionFactory=null;
+//		Session session = null;
+//		Transaction t = null;
+		
+		
+	
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction	t = session.beginTransaction();
+/*
+			// HQL-CREATE
+			Query query = session.createQuery("insert into animals(id,name,color) " + "SELECT id,name,color from animals_backup");
+			// query.setParameter("i", 3);
+			int resultInserted = query.executeUpdate();
+			System.out.println("Inserted Successfully with result=" + resultInserted);
+*/
+
+		
+			// HQL-RETRIEVE
+			  logger.info("fetching data from animals table");
+			  Query query=(Query) session.createQuery("from animals");
+			  query.setFirstResult(0); 
+			  query.setMaxResults(2); 
+			  Query query2=(Query)session.createQuery("from animals where name='Lion'"); 
+			  Query query3=(Query)session.createQuery("from animals where name=:n"); 
+			  query3.setParameter("n","TIGER");
+			  List<Animal> animals=query3.list(); 
+			  	for(Animal a:animals) {
+			  		System.out.println(a.getId()+" "+a.getName()+" "+a.getColor()); 
+			  		logger.info("The Values are "+a.getId()+" "+a.getName()+" "+a.getColor());
+			    }
+
+/*
+			  //HQL-UPDATE 
+			  Query query=(Query)session.createQuery("update animals set color=:c,name=:n where id>:i"); 
+			  query.setParameter("c", "Green"); 
+			  query.setParameter("n", "Butterfly"); 
+			  query.setParameter("i", 5);
+			  int resultUpdated=query.executeUpdate();
+			  System.out.println(resultUpdated);
+*/
+/*
+			  //HQL-DELETE 
+			  Query query=session.createQuery("delete from animals where id>:i"); 
+			  query.setParameter("i", 5); 
+			  int resultDeleted=query.executeUpdate(); 
+			  System.out.println("Deleted Successfully with result="+resultDeleted); 
+			  t.commit();
+	
+*/
+		
+			//t.rollback();
+
+		
+			session.close();
+
+
+	}
+}

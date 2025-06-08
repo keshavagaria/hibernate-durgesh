@@ -1,0 +1,82 @@
+ package com.hcl.demo;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.hcl.demo.model.Customer;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+         Customer customer1=new Customer();
+         customer1.setCustomerId(101);
+         customer1.setCustomerLastname("Vishal");
+         customer1.setCutomerFirstname("Singh");
+         
+         customer1.setCustomerId(1022);
+         customer1.setCustomerLastname("Rahul");
+         customer1.setCutomerFirstname("Sharma");
+         
+         Customer customer2=new Customer();
+         customer2.setCustomerId(103);
+         customer2.setCustomerLastname("Aman");
+         customer2.setCutomerFirstname("Gupta");
+         
+         Customer customer3=new Customer();
+         customer3.setCustomerId(104);
+         customer3.setCustomerLastname("Ravi");
+         customer3.setCutomerFirstname("Aggarwal");
+         
+//         SessionFactory sessionFactory=null;
+//         Session session=null;
+       
+         try {
+		       SessionFactory sessionFactory=new  Configuration().configure().buildSessionFactory();
+		        Session  session=sessionFactory.openSession();
+		          session.beginTransaction();
+		          
+		          //1. returns the identifier (Serializable) of the instance.
+		          //2. public Serializable save(Object o)
+		          //3. can be used outside the tx boundaries
+		          Serializable id=(int) session.save(customer1);
+		          System.out.println(id);
+		          
+		          //1. Return nothing because its return type is void.
+		          //2. public void persist(Object o)
+		          //3. can't be used outside the tx boundaries
+		          session.persist(customer2);
+		          session.getTransaction().commit();
+		          
+		          Serializable id2=(int) session.save(customer3);
+		          System.out.println(id2);
+		          session.close();
+         
+         }catch(Exception e)
+         {
+		          e.printStackTrace();
+		          //session.getTransaction().rollback();
+         }
+         finally {
+        	 //session.close();
+         }
+         
+         
+//         Configuration configuration=new Configuration();
+//         configuration.configure();
+//         SessionFactory sessionFactory=configuration.buildSessionFactory();
+//         Session session=sessionFactory.openSession();
+//         Transaction  transaction=session.beginTransaction();
+//         session.save(customer);
+//         session.save(customer2);
+//         transaction.commit();
+//         session.close();
+         
+         
+         
+    }
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\visha\eclipse-workspace\hibernate-durgesh\Demo-28-log4j2\src\main\java\com\hcl\demo\App.java"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate-durgesh\Demo-27-merge_vs_update"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate-durgesh\Demo-26-Table_Per_Subclass"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate-durgesh\Demo-25-Table_Per_Class"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate-durgesh\Demo-23-HCQL"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\Demo-22-caching"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\Demo-21-Cascading\src\main\java\com\hcl\demo\App.java"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\HQL-AggregateFunctions"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\HibernateDemo1"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\one-to-many_Unidirectional_lazy-eager"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\transient-persistent-detached\src\main\java\com\hcl\demo\App.java"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\One-to-One"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\Embeddable\src\main\java\com\hcl\demo\App.java"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\SavingImage\src\main\java\com\hcl\demo\Address.java"/>
+			<item value="C:\Users\visha\eclipse-workspace\hibernate\SavingImage\src\main\java\com\hcl\demo\App.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

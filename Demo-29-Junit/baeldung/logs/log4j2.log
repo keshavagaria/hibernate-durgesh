@@ -1,0 +1,14 @@
+[INFO ] 2025-06-02 14:13:09.941 [main] Version - HHH000412: Hibernate Core {5.0.10.Final}
+[INFO ] 2025-06-02 14:13:09.952 [main] Environment - HHH000206: hibernate.properties not found
+[INFO ] 2025-06-02 14:13:09.954 [main] Environment - HHH000021: Bytecode provider name : javassist
+[INFO ] 2025-06-02 14:13:10.293 [main] Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[WARN ] 2025-06-02 14:13:10.355 [main] connections - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2025-06-02 14:13:10.453 [main] connections - HHH10001005: using driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] at URL [jdbc:sqlserver://localhost;databaseName=demo]
+[INFO ] 2025-06-02 14:13:10.453 [main] connections - HHH10001001: Connection properties: {password=****, user=vishal}
+[INFO ] 2025-06-02 14:13:10.453 [main] connections - HHH10001003: Autocommit mode: false
+[INFO ] 2025-06-02 14:13:10.456 [main] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+[INFO ] 2025-06-02 14:13:10.896 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+[WARN ] 2025-06-02 14:13:11.170 [main] SessionFactoryBuilderImpl - Unrecognized hbm2ddl_auto value : none.  Supported values include create, create-drop, update, and validate.  Ignoring
+[INFO ] 2025-06-02 14:13:11.414 [main] App - fetching data from animals table
+[INFO ] 2025-06-02 14:13:11.424 [main] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+[INFO ] 2025-06-02 14:13:11.556 [main] App - The Values are 2 Tiger White

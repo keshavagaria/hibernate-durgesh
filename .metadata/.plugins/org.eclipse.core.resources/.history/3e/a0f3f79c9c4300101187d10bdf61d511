@@ -1,0 +1,65 @@
+package com.hcl.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	  Answer5 answer5_1=new Answer5();
+    	  answer5_1.setId(1100);
+    	  answer5_1.setAnswer("Spring is a JAVA Framework");
+    	  
+    	  Answer5 answer5_2=new Answer5();
+    	  answer5_2.setId(2200);
+    	  answer5_2.setAnswer("Spring provides loose coupling");
+    	  
+    	  Answer5 answer5_3=new Answer5();
+    	  answer5_3.setId(3300);
+    	  answer5_3.setAnswer("Java supports Multithreading");
+    	  
+    	  List<Answer5> answers=new ArrayList<Answer5>();
+    	  answers.add(answer5_1);
+    	  answers.add(answer5_2);
+    	  answers.add(answer5_3);
+    	  
+    	  Question5 question5=new Question5();
+    	  question5.setQuestionId(302);
+    	  question5.setQuestion("What is Spring");
+    	  question5.setAnswers(answers);
+    	
+    	  
+    	  
+    	  answer5_1.setQuestion5(question5);
+    	  answer5_2.setQuestion5(question5);
+    	  answer5_3.setQuestion5(question5);
+    	  
+          SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+          Session session=sessionFactory.openSession();
+          Transaction tx=session.beginTransaction();
+          
+          session.save(question5);
+          session.save(answer5_1);
+          session.save(answer5_2);
+          session.save(answer5_3);
+          
+//          Question5 q=session.get(Question5.class, 301);
+//          System.out.println(q.getQuestionId()+" "+q.getQuestion());
+//             List<Answer5> ans=q.getAnswers();
+//             
+//             for(Answer5 a : ans)
+//             {
+//            	 System.out.println(a.getId()+" "+a.getAnswer());
+//             }
+          
+          tx.commit();
+          session.close();
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;one-to-many_Unidirectional&apos; to &apos;one-to-many_Unidirectional_lazy-eager&apos;" description="Rename resource &apos;one-to-many_Unidirectional&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/one-to-many_Unidirectional" name="one-to-many_Unidirectional_lazy-eager" stamp="1646121970194" updateReferences="true"/>
+</session>

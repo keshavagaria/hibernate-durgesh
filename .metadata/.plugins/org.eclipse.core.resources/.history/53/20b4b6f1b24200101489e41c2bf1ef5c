@@ -1,0 +1,28 @@
+package com.hcl.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	SessionFactory sessionFactory=null;
+    	 Session session=null;
+    	  sessionFactory=new  Configuration().configure().buildSessionFactory();
+          session=sessionFactory.openSession();
+          
+          //NOTE: NO NEED of transaction here
+          Customer customer=session.get(Customer.class, 103);
+          System.out.println(customer);
+      
+          session.close();
+          
+          session=sessionFactory.openSession();
+          Customer customer2=session.get(Customer.class, 103);
+          System.out.println(customer2);
+          session.close();
+
+    }
+}

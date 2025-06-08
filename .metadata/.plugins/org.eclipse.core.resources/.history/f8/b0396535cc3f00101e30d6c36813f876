@@ -1,0 +1,18 @@
+package com.hcl.demo;
+
+public class SimpleTest {
+
+String message = "Vishu";
+	
+	@Test
+	public void printMessage() {
+		System.out.println("Inside Print Method");
+		assertEquals(message, "Vishu");
+	}
+	
+	public static void main(String[] args) {
+		SimpleTest simpleTest=new SimpleTest();
+		simpleTest.printMessage();
+		
+	}
+}

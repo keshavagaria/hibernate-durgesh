@@ -1,0 +1,51 @@
+package com.hcl.demo;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Answer4 {
+	
+	@Id
+	private int id;
+	
+	private String answer;
+	
+	@ManyToOne
+	@JoinColumn(name = "THE_QUESTION_ID")
+	private Question4 question4;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public Question4 getQuestion4() {
+		return question4;
+	}
+
+	public void setQuestion4(Question4 question4) {
+		this.question4 = question4;
+	}
+
+
+
+
+	
+	
+}

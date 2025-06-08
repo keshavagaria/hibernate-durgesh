@@ -1,0 +1,45 @@
+package com.hcl.demo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+
+@Entity
+public class Question2 {
+	
+	@Id
+	private int questionId;
+	
+	private String question;
+	
+	@OneToOne
+	@JoinColumn(name = "THE_ANSWER_ID")
+	private Answer2 answer2;
+
+	public int getQuestionId() {
+		return questionId;
+	}
+
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public Answer2 getAnswer2() {
+		return answer2;
+	}
+
+	public void setAnswer2(Answer2 answer2) {
+		this.answer2 = answer2;
+	}
+
+	
+}

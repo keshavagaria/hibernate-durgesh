@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;hibernate.cfg.xml&apos; to &apos;Demo-22-caching&apos;" description="Move &apos;hibernate.cfg.xml&apos; to &apos;Demo-22-caching&apos;" destination="/Demo-22-caching" element1="src/main/java/hibernate.cfg.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1749239462399" updateReferences="true"/>
+</session>

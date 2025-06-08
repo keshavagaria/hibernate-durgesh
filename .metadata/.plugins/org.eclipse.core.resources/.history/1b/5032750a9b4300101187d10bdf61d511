@@ -1,0 +1,58 @@
+package com.hcl.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+//    	  Answer3 answer3_1=new Answer3();
+//    	  answer3_1.setId(1000);
+//    	  answer3_1.setAnswer("Java is a programming language");
+//    	  
+//    	  Answer3 answer3_2=new Answer3();
+//    	  answer3_2.setId(2000);
+//    	  answer3_2.setAnswer("Java is a platform");
+//    	  
+//    	  Answer3 answer3_3=new Answer3();
+//    	  answer3_3.setId(3000);
+//    	  answer3_3.setAnswer("Java supports Multithreading");
+//    	  
+//    	  List<Answer3> answers=new ArrayList<Answer3>();
+//    	  answers.add(answer3_1);
+//    	  answers.add(answer3_2);
+//    	  answers.add(answer3_3);
+//    	  
+//    	  Question3 question3=new Question3();
+//    	  question3.setQuestionId(301);
+//    	  question3.setQuestion("What is Java");
+//    	  question3.setAnswers(answers);
+    	
+          SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+          Session session=sessionFactory.openSession();
+         //Transaction tx=session.beginTransaction();        //no need of transaction in get or load
+          
+//          session.save(question3);
+//          session.save(answer3_1);
+//          session.save(answer3_2);
+//          session.save(answer3_3);
+//          
+            Question3 q=  session.load(Question3.class, 303);
+            System.out.println(q.getQuestionId()+" "+q.getQuestion());
+          
+            
+          
+            System.out.println(q.getAnswers().size());
+          
+        // tx.commit();
+          session.close();
+          System.out.println(q.getQuestionId()+" "+q.getQuestion());
+          
+    }
+}

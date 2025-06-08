@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Demo-11-one-to-many_many-to-one&apos; to &apos;Demo-11-one-to-many_many-to-one_BIDIRECTIONAL&apos;" description="Rename resource &apos;Demo-11-one-to-many_many-to-one&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Demo-11-one-to-many_many-to-one" name="Demo-11-one-to-many_many-to-one_BIDIRECTIONAL" stamp="1749299745207" updateReferences="true"/>
+</session>

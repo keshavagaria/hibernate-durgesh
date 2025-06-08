@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.hcl.demo.Demo_28_log4j2&apos; to &apos;com.hcl.demo&apos;&#x0D;&#x0A;- Original project: &apos;Demo-29-Junit&apos;&#x0D;&#x0A;- Original element: &apos;Demo-29-Junit/src/test/java/com.hcl.demo.Demo_28_log4j2&apos;&#x0D;&#x0A;- Renamed element: &apos;Demo-29-Junit/src/test/java/com.hcl.demo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.hcl.demo.Demo_28_log4j2&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hcl.demo.Demo_28_log4j2" name="com.hcl.demo" qualified="false" references="true" stamp="1748880613773" textual="false" version="1.0"/>
+</session>

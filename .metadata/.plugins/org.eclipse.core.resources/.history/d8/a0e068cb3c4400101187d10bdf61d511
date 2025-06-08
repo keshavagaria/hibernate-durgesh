@@ -1,0 +1,90 @@
+package com.hcl.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Project project1=new Project();
+    	project1.setName("Project 1");
+    	
+    	Project project2=new Project();
+    	project2.setName("Project 2");
+    	
+    	List<Project> projectList1=new ArrayList<Project>();
+    	projectList1.add(project1);
+    	
+    	List<Project> projectList2=new ArrayList<Project>();
+    	projectList2.add(project2);
+    	
+    	
+    	Resource resource1=new Resource();
+    	resource1.setFirstname("Vishal");
+    	resource1.setLastname("Singh");
+    	
+    	Resource resource2=new Resource();
+    	resource2.setFirstname("Ajeet");
+    	resource2.setLastname("Kumar");
+    	
+    	
+    	Resource resource3=new Resource();
+    	resource3.setFirstname("Mayank");
+    	resource3.setLastname("Tomar");
+    	
+    	List<Resource> resoucelist1=new ArrayList();
+    	resoucelist1.add(resource1);
+    	resoucelist1.add(resource2);
+    	
+    	List<Resource> resoucelist2=new ArrayList();
+    	resoucelist2.add(resource2);
+    	resoucelist2.add(resource3);
+    	
+    	project1.setResources(resoucelist1);
+    	project2.setResources(resoucelist2);
+    	
+    	resource1.setProjects(projectList1);
+    	
+    	//===============need to check this ==================
+    	resource2.setProjects(projectList1);
+    	resource2.setProjects(projectList2);
+    	//====================================================
+    	resource3.setProjects(projectList2);
+    	try {
+    	
+    	
+    	SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+    	Session	session = sessionFactory.openSession();
+    	Transaction	tx = session.beginTransaction();
+	    		
+	    		
+//			    	session.save(project1);
+//			    	session.save(project2);
+//
+//			    	session.save(resource1);
+//			    	session.save(resource2);
+//
+//			    	session.save(resource3);
+//			    	
+//			    	session.beginTransaction().commit();
+			    	
+			    	Project project = session.get(Project.class, 1);
+			    	System.out.println(project.getName()" "+project.getResources());
+			    	session.close();
+    		
+    	}catch (Exception e) {
+			e.printStackTrace();
+			//tx.rollback();
+		}
+    	finally {
+    		//session.close();
+    	}
+    }
+}

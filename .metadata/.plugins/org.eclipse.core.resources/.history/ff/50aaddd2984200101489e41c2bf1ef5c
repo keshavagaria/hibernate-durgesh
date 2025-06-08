@@ -1,0 +1,55 @@
+package com.hcl.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	
+//    	List<Address> addresses=new ArrayList<Address>();
+//    	
+//    	Address address=new Address();
+//    	address.setCity("Saket");
+//    	address.setState("Delhi");
+//    	
+//    	Address address2=new Address();
+//    	address2.setCity("Andheri");
+//    	address2.setState("Mumbai");
+//    	
+//    	addresses.add(address);
+//    	addresses.add(address2);
+//    	
+//    	System.out.println(addresses);
+//    	 
+//    	Person person=new Person();
+//    	person.setId(101);
+//    	person.setName("Vladimir Putin");
+//    	person.setAddresses(addresses);
+    	
+    	
+        SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+         Session session=   sessionFactory.openSession();
+         Transaction tx=  session.beginTransaction();
+         
+        //int id=(Integer) session.save(person);
+       // System.out.println(id);
+         Person p=null;
+         p=session.get(Person.class, 101);
+         System.out.println(p.getId()+" "+p.getName());
+         System.out.println(p.getAddresses());
+         
+         p=session.get(Person.class, 101);
+         System.out.println(p.getId()+" "+p.getName());
+         System.out.println(p.getAddresses());
+         
+         tx.commit();
+         session.close();
+        // System.out.println(p.getAddresses());
+         
+      
+         
+    }
+}

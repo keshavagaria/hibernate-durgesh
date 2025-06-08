@@ -1,0 +1,38 @@
+package com.hcl.demo;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+       
+	    	Address address=new Address();
+	    	address.setCity("Pitampura");
+	    	address.setState("Delhi");
+	    	
+	    	Employee employee=new Employee();
+	    	employee.setId(111);
+	    	employee.setName("Raman Raghav");
+	    	employee.setAddress(address);
+    	
+    	SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+    	Session session=  sessionFactory.openSession();
+    	Transaction tx=session.beginTransaction();
+    	
+    	Serializable id=(Integer) session.save(employee);
+    	System.out.println(id);
+    	
+    	tx.commit();
+    	session.close();
+    	
+    	
+    	
+    	
+    }
+}

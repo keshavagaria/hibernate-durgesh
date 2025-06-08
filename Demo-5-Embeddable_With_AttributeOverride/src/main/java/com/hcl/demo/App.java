@@ -1,0 +1,34 @@
+package com.hcl.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Address address1=new Address();
+    	address1.setCity("Pitampura");
+    	address1.setState("delhi");
+    	
+    	Address address2=new Address();
+    	address2.setCity("Gurgaon");
+    	address2.setState("Haryana");
+    	
+    	Person person=new Person();
+    	person.setId(420);
+    	person.setName("KESHAV AGARIA");
+    	person.setHomeAddress(address1);
+    	person.setOfficeAddress(address2);
+    	
+    	SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+    	Session session=  sessionFactory.openSession();
+    	Transaction tx=session.beginTransaction();
+    	
+    	session.save(person);
+    	tx.commit();
+    	session.close();
+    }
+}
