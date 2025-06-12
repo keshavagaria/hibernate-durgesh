@@ -1,47 +1,69 @@
 package com.hcl.demo;
 
+
 import java.util.Arrays;
 import java.util.List;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
+import org.hibernate.query.Query;
 
 public class App 
 {
     public static void main( String[] args )
     {
-    	SessionFactory sessionFactory=null;;
-    	Session session=null;
-    	Transaction t=null;
-    	try {
-    	 sessionFactory=new Configuration().configure().buildSessionFactory();
-    	 session= sessionFactory.openSession();
-    	 t=session.beginTransaction();
-    	
+    	/*
+    	  Answer3 answer3_1=new Answer3();
+    	  answer3_1.setId(4000);
+    	  answer3_1.setAnswer("Spring is a Java Framework");
+    	  
+    	  Answer3 answer3_2=new Answer3();
+    	  answer3_2.setId(5000);
+    	  answer3_2.setAnswer("Spring provides loose coupling");
+    	  
+    	  Answer3 answer3_3=new Answer3();
+    	  answer3_3.setId(6000);
+    	  answer3_3.setAnswer("Spring has DI and IOC");
+    	  
+    	  List<Answer3> answers=new ArrayList<Answer3>();
+    	  answers.add(answer3_1);
+    	  answers.add(answer3_2);
+    	  answers.add(answer3_3);
+    	  
+    	  Question3 question3=new Question3();
+    	  question3.setQuestionId(302);
+    	  question3.setQuestion("What is SPring");
+    	  question3.setAnswers(answers);
+    	*/
     
-    	 
-    	 Query query=session.createQuery("SELECT q.questionId,a.id FROM Question q"
-    			+ " INNER JOIN q.answer as a");
-    	 
-    	 List<Object []> list=query.list();
-    	 for(Object[] a:list) {
-    		 System.out.println(Arrays.toString(a));
-    	 }
-    	 t.commit();
-    	 
-    	}catch (Exception e) {
-			e.printStackTrace();
-			t.rollback();
-			
-		}
-    	finally {
-			session.close();
-		}
+    	  SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+          Session session=sessionFactory.openSession();
+          Transaction tx=session.beginTransaction();        //no need of transaction in get or load
+       
     	
-    	
+//          session.save(answer3_1);
+//          session.save(answer3_2);
+//          session.save(answer3_3);
+//          
+          	// will fire N+1 queries - 
+          	//Query query=session.createQuery("from Question3 q INNER JOIN  q.answers as a");
+          	
+          	// N+1 resolved-
+          	Query query=session.createQuery("from Question3 q INNER JOIN FETCH q.answers as a");
+//          Query query=session.createQuery("SELECT q.questionId,a.id FROM Question q"
+//      			+ " INNER JOIN q.answer as a");
+      	 
+      	 List list=query.list();
+      	 list.forEach(p->System.out.println(p));
+            
+          
+           // System.out.println(q.getAnswers().size());
+          
+      	 	tx.commit();
+          session.close();
+ //         System.out.println(q.getQuestionId()+" "+q.getQuestion());
+          
     }
 }

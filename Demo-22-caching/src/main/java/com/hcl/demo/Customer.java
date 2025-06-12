@@ -12,14 +12,30 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+//@Cacheable
+//@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Customer {
 
 	@Id
 	private int customerId;
 	private String cutomerFirstname;
 	private String customerLastname;
+	
+	
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Customer(int customerId, String cutomerFirstname, String customerLastname) {
+		super();
+		this.customerId = customerId;
+		this.cutomerFirstname = cutomerFirstname;
+		this.customerLastname = customerLastname;
+	}
+
+
 	public int getCustomerId() {
 		return customerId;
 	}

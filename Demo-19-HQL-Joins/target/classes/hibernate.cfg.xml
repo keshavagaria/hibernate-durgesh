@@ -24,8 +24,11 @@
 <property name="hibernate.connection.password">system123# </property>
 
 <!-- Realted to hibernate mapping-->
-<mapping class="com.hcl.demo.Question"/>
-<mapping class="com.hcl.demo.Answer"/>
+<mapping class="com.hcl.demo.OneToOne.Question"/>
+<mapping class="com.hcl.demo.OneToOne.Answer"/>
+
+<mapping class="com.hcl.demo.OneToMany.Question3"/>
+<mapping class="com.hcl.demo.OneToMany.Answer3"/>
 
 </session-factory>
 

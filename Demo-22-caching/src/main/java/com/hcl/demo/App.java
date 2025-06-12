@@ -2,13 +2,14 @@ package com.hcl.demo;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class App 
 {
     public static void main( String[] args )
     {
-
+    		
     	 SessionFactory sessionFactory=new  Configuration().configure().buildSessionFactory();
     	 Session  session=sessionFactory.openSession();
           
@@ -23,6 +24,10 @@ public class App
           Customer customer2=session.get(Customer.class, 103);
           System.out.println(customer2);
           session.close();
+          
+          session=sessionFactory.openSession();
+          Customer customer3=session.get(Customer.class, 103);
+          System.out.println(customer3);
 
     }
 }
